@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>cs213-project-four</artifactId>
+    <artifactId>pizza</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>cs213-project-four</name>
+    <name>pizza</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
