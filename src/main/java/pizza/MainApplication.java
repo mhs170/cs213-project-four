@@ -18,6 +18,8 @@ public class MainApplication extends Application {
         stage.setTitle("Main Menu");
         stage.setScene(scene);
         stage.show();
+        stage.setMinWidth(680);
+        stage.setMinHeight(700);
     }
 
     public static void main(String[] args) {

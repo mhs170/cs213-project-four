@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="fix naming of module folders">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/main-menu.fxml" afterDir="false" />
+    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="types of pizza classes">
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,15 +95,35 @@
       <option name="project" value="LOCAL" />
       <updated>1699551466224</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="types of pizza classes">
+      <option name="closed" value="true" />
+      <created>1699556032234</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699556032234</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="deluxe pizza class" />
     <MESSAGE value="add instructions" />
     <MESSAGE value="add temporary constructors to avoid erros in running ui" />
     <MESSAGE value="fix naming of module folders" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix naming of module folders" />
+    <MESSAGE value="types of pizza classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="types of pizza classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
