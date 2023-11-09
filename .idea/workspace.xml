@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cs213projectfour/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cs213projectfour/HelloController.java" beforeDir="false" />
-    </list>
+    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="deluxe pizza class" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +48,20 @@
       <option name="presentableId" value="Default" />
       <updated>1699482259844</updated>
     </task>
+    <task id="LOCAL-00001" summary="deluxe pizza class">
+      <option name="closed" value="true" />
+      <created>1699536692791</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699536692791</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="deluxe pizza class" />
+    <option name="LAST_COMMIT_MESSAGE" value="deluxe pizza class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
