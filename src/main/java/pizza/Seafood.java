@@ -3,14 +3,42 @@ package pizza;
 import java.util.ArrayList;
 
 public class Seafood extends Pizza {
+    private static final Sauce SAUCE = Sauce.ALFREDO;
+    private static final double SMALL_PRICE = 17.99;
 
-    //auto constructor
-    public Seafood(ArrayList<Topping> toppings, Size size, Sauce sauce, boolean extraSauce, boolean extraCheese, double price) {
+    /**
+     * Constructor to create new seafood pizza object
+     * @param toppings list of toppings
+     * @param size pizza size
+     * @param sauce pizza sauce
+     * @param extraSauce if there's extra sauce
+     * @param extraCheese if there's extra cheese
+     * @param price final price
+     */
+    public Seafood(ArrayList<Topping> toppings, Size size, Sauce sauce,
+                   boolean extraSauce, boolean extraCheese, double price) {
         super(toppings, size, sauce, extraSauce, extraCheese, price);
     }
 
+    /**
+     * method to calculate final price
+     * @return final price
+     */
     @Override
     public double price() {
-        return 0;
+        double price = SMALL_PRICE;
+        if (size.equals(Size.MEDIUM)){
+            price += EXTRA_FOR_MEDIUM;
+        }
+        if (size.equals(Size.LARGE)){
+            price += EXTRA_FOR_LARGE;
+        }
+        if (extraCheese){
+            price += 1;
+        }
+        if (extraSauce){
+            price += 1;
+        }
+        return price;
     }
 }

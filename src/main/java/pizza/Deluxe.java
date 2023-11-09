@@ -3,11 +3,8 @@ package pizza;
 import java.util.ArrayList;
 
 public class Deluxe extends Pizza {
-    private final Sauce SAUCE = Sauce.TOMATO;
-    private Size size;
-    private final double SMALL_PRICE = 14.99;
-    private final double EXTRA_FOR_MEDIUM = 2.00;
-    private final double EXTRA_FOR_LARGE = 4.00;
+    private static final Sauce SAUCE = Sauce.TOMATO;
+    private static final double SMALL_PRICE = 14.99;
 
     /**
      * Constructor method to create new deluxe pizza object
