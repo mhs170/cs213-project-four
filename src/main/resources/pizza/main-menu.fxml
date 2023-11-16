@@ -31,7 +31,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button contentDisplay="BOTTOM" mnemonicParsing="false" text="Speciality Pizza" GridPane.halignment="CENTER">
+            <Button fx:id="specialityButton" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#handleSpeciality" text="Speciality Pizza" GridPane.halignment="CENTER">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -40,7 +40,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button contentDisplay="BOTTOM" mnemonicParsing="false" text="Build Your Own" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+            <Button fx:id="buildYourOwnButton" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#handleBuildYourOwn" text="Build Your Own" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -49,7 +49,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button contentDisplay="BOTTOM" mnemonicParsing="false" text="Current Order" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="currOrderButton" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#handleCurrOrder" text="Current Order" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -58,7 +58,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button contentDisplay="BOTTOM" mnemonicParsing="false" text="Store Orders" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="storeOrdersButton" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#handleStoreOrders" text="Store Orders" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>

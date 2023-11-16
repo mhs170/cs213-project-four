@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="types of pizza classes">
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainApplication.java" afterDir="false" />
+    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="add main menu ui unversioned files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/main-menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/main-menu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
