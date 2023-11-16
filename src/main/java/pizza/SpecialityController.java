@@ -25,13 +25,13 @@ public class SpecialityController {
     private TextField sauceField;
 
     @FXML
-    private ComboBox<?> sizeDropdown;
+    private ComboBox<String> sizeDropdown;
 
     @FXML
-    private ListView<?> toppingsList;
+    private ListView<String> toppingsList;
 
     @FXML
-    private ComboBox<?> typeDropdown;
+    private ComboBox<String> typeDropdown;
 
     @FXML
     void handleAddToOrder(ActionEvent event) {

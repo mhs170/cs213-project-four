@@ -31,7 +31,7 @@ public class MainMenuController {
             root = FXMLLoader.load(getClass().getResource("speciality.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Order Speciality Pizzas");
-            stage.setScene(new Scene(root, 450, 450));
+            stage.setScene(new Scene(root, 450, 500));
             stage.show();
         }
         catch (IOException e) {
@@ -41,7 +41,17 @@ public class MainMenuController {
 
     @FXML
     void handleBuildYourOwn(ActionEvent event) {
-
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("build-your-own.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Customize Your Pizza");
+            stage.setScene(new Scene(root, 450, 500));
+            stage.show();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="567.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pizza.BuildYourOwnController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="33.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@build_your_own.jpg" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="sizeDropdown" layoutX="253.0" layoutY="53.0" prefWidth="150.0" />
+      <Text layoutX="253.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Size" />
+      <ComboBox fx:id="sauceDropdown" layoutX="252.0" layoutY="124.0" prefWidth="150.0" />
+      <Text layoutX="257.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sauce" />
+      <ListView fx:id="additionalToppingsList" layoutX="33.0" layoutY="265.0" prefHeight="200.0" prefWidth="122.0" />
+      <ListView fx:id="selectedToppingsList" layoutX="273.0" layoutY="265.0" prefHeight="200.0" prefWidth="122.0" />
+      <Button fx:id="addToppingButton" layoutX="178.0" layoutY="302.0" mnemonicParsing="false" onAction="#handleAddTopping" prefHeight="26.0" prefWidth="73.0" text="add &gt;&gt;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="removeToppingButton" layoutX="178.0" layoutY="352.0" mnemonicParsing="false" onAction="#removeTopping" text="&lt;&lt;remove">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Text layoutX="40.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Additional Toppings" />
+      <Text layoutX="279.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selected Toppings" />
+      <TextField fx:id="priceField" disable="true" layoutX="92.0" layoutY="497.0" prefHeight="26.0" prefWidth="97.0" promptText="00.00">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextField>
+      <Text layoutX="38.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price   $" />
+      <Button fx:id="addToOrderButton" layoutX="213.0" layoutY="498.0" mnemonicParsing="false" onAction="#handleAddToOrder" prefHeight="26.0" prefWidth="181.0" text="Add to order" />
+      <CheckBox fx:id="extraSauceCheckbox" layoutX="137.0" layoutY="193.0" mnemonicParsing="false" onAction="#handleExtraSauce" text="Extra sauce" />
+      <CheckBox fx:id="extraCheeseCheckbox" layoutX="262.0" layoutY="193.0" mnemonicParsing="false" onAction="#handleExtraCheese" text="Extra cheese" />
+      <Text layoutX="40.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Extras" />
+   </children>
+</AnchorPane>
