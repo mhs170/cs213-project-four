@@ -32,5 +32,8 @@ public enum Topping {
         return topping;
     }
 
-
+    @Override
+    public String toString() {
+        return topping;
+    }
 }

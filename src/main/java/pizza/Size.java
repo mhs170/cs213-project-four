@@ -21,4 +21,9 @@ public enum Size {
     public String getSize(){
         return size;
     }
+
+    @Override
+    public String toString() {
+        return size;
+    }
 }

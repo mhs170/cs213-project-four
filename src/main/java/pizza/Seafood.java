@@ -1,6 +1,7 @@
 package pizza;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Seafood extends Pizza {
     private static final Sauce SAUCE = Sauce.ALFREDO;
@@ -8,16 +9,21 @@ public class Seafood extends Pizza {
 
     /**
      * Constructor to create new seafood pizza object
-     * @param toppings list of toppings
      * @param size pizza size
      * @param sauce pizza sauce
      * @param extraSauce if there's extra sauce
      * @param extraCheese if there's extra cheese
      * @param price final price
      */
-    public Seafood(ArrayList<Topping> toppings, Size size, Sauce sauce,
+    public Seafood(Size size, Sauce sauce,
                    boolean extraSauce, boolean extraCheese, double price) {
-        super(toppings, size, sauce, extraSauce, extraCheese, price);
+        super(new ArrayList<>(
+                Arrays.asList(
+                        Topping.SHRIMP,
+                        Topping.SQUID,
+                        Topping.CRAB_MEATS
+                )
+        ), size, sauce, extraSauce, extraCheese, price);
     }
 
     /**

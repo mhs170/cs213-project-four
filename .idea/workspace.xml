@@ -6,15 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="add store orders ui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwnController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Deluxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Deluxe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Meatzza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Meatzza.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Pepperoni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Pepperoni.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Pizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Pizza.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pizza/PizzaMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/PizzaMaker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Seafood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Seafood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Size.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Supreme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Supreme.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Topping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Topping.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +69,7 @@
   <component name="RunManager">
     <configuration name="Run main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="pizza.MainApplication" />
-      <module name="pizza" />
+      <module name="cs213-project-four" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -180,16 +181,5 @@
     <MESSAGE value="add current order ui" />
     <MESSAGE value="add store orders ui" />
     <option name="LAST_COMMIT_MESSAGE" value="add store orders ui" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pizza/Meatzza.java</url>
-          <line>2</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

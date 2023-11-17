@@ -1,6 +1,7 @@
 package pizza;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Deluxe extends Pizza {
     private static final Sauce SAUCE = Sauce.TOMATO;
@@ -8,16 +9,23 @@ public class Deluxe extends Pizza {
 
     /**
      * Constructor method to create new deluxe pizza object
-     * @param toppings pizza toppings
      * @param size pizza size
      * @param sauce pizza sauce
      * @param extraSauce if there's extra sauce
      * @param extraCheese if there's extra cheese
      * @param price final price
      */
-    public Deluxe(ArrayList<Topping> toppings, Size size, Sauce sauce,
+    public Deluxe(Size size, Sauce sauce,
                   boolean extraSauce, boolean extraCheese, double price) {
-        super(toppings, size, sauce, extraSauce, extraCheese, price);
+        super(new ArrayList<>(
+                Arrays.asList(
+                        Topping.SAUSAGE,
+                        Topping.PEPPERONI,
+                        Topping.GREEN_PEPPER,
+                        Topping.BLACK_OLIVE,
+                        Topping.MUSHROOM
+                )
+        ), size, sauce, extraSauce, extraCheese, price);
     }
 
     /**
