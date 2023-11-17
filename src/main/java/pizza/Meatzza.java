@@ -41,4 +41,10 @@ public class Meatzza extends Pizza {
         }
         return price;
     }
+    public void addToppings(ArrayList<Topping> toppings){
+        toppings.add(Topping.SAUSAGE);
+        toppings.add(Topping.PEPPERONI);
+        toppings.add(Topping.BEEF);
+        toppings.add(Topping.HAM);
+    }
 }

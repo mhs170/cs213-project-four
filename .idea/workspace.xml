@@ -6,15 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="add store orders ui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/build-your-own.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/build-your-own.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/build_your_own.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/images/build_your_own.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/current_order.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/images/current_order.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/main-menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/main-menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/speciality.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/speciality.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/specialty.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/images/specialty.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/store_orders.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/images/store_orders.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwnController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Deluxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Deluxe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Meatzza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Meatzza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Pepperoni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Pepperoni.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Pizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Pizza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/PizzaMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/PizzaMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Seafood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Seafood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Supreme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Supreme.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +68,7 @@
   <component name="RunManager">
     <configuration name="Run main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="pizza.MainApplication" />
-      <module name="cs213-project-four" />
+      <module name="pizza" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

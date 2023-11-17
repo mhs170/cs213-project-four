@@ -20,5 +20,16 @@ public abstract class Pizza {
         this.extraCheese = extraCheese;
         this.price();
     }
-
+    public void setExtraCheese(boolean extraCheese){
+        this.extraCheese = extraCheese;
+    }
+    public void setExtraSauce(boolean extraSauce){
+        this.extraSauce = extraSauce;
+    }
+    public void setSize(Size size){
+        this.size = size;
+    }
+    public void setSauce(Sauce sauce){
+        this.sauce = sauce;
+    }
 }

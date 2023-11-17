@@ -40,4 +40,13 @@ public class Supreme extends Pizza {
         }
         return price;
     }
+    public void addToppings(ArrayList<Topping> toppings){
+        toppings.add(Topping.SAUSAGE);
+        toppings.add(Topping.PEPPERONI);
+        toppings.add(Topping.HAM);
+        toppings.add(Topping.GREEN_PEPPER);
+        toppings.add(Topping.ONION);
+        toppings.add(Topping.BLACK_OLIVE);
+        toppings.add(Topping.MUSHROOM);
+    }
 }

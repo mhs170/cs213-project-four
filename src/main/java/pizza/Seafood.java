@@ -41,4 +41,9 @@ public class Seafood extends Pizza {
         }
         return price;
     }
+    public void addToppings(ArrayList<Topping> toppings){
+        toppings.add(Topping.SHRIMP);
+        toppings.add(Topping.SQUID);
+        toppings.add(Topping.CRAB_MEATS);
+    }
 }

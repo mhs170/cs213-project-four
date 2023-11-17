@@ -41,4 +41,7 @@ public class Pepperoni extends Pizza {
         }
         return price;
     }
+    public void addToppings(ArrayList<Topping> toppings){
+        toppings.add(Topping.PEPPERONI);
+    }
 }
