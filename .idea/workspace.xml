@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="add store orders ui">
+    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="change pizzas constructors to just use default toppings for that pizza type">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Deluxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Deluxe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Meatzza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Meatzza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Pepperoni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Pepperoni.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Pizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Pizza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/PizzaMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/PizzaMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Seafood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Seafood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Size.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Supreme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Supreme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Topping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Topping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/speciality.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/speciality.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700235414268</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="change pizzas constructors to just use default toppings for that pizza type">
+      <option name="closed" value="true" />
+      <created>1700263804438</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1700263804438</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,6 +180,7 @@
     <MESSAGE value="add build your own pizza ui" />
     <MESSAGE value="add current order ui" />
     <MESSAGE value="add store orders ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="add store orders ui" />
+    <MESSAGE value="change pizzas constructors to just use default toppings for that pizza type" />
+    <option name="LAST_COMMIT_MESSAGE" value="change pizzas constructors to just use default toppings for that pizza type" />
   </component>
 </project>

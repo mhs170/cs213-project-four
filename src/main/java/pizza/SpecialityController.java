@@ -1,6 +1,7 @@
 package pizza;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,10 +34,10 @@ public class SpecialityController {
     private TextField sauceField;
 
     @FXML
-    private ListView<String> toppingsList;
+    private ListView<Topping> toppingsList;
 
     @FXML
-    private ComboBox<String> sizeDropdown;
+    private ComboBox<Size> sizeDropdown;
 
     @FXML
     private ComboBox<String> typeDropdown;
@@ -45,11 +46,11 @@ public class SpecialityController {
             "Deluxe", "Supreme", "Meatzza", "Pepperoni", "Seafood"
     );
 
-    ObservableList<String> sizes = FXCollections.observableArrayList(
-            "Small", "Medium", "Large"
+    ObservableList<Size> sizes = FXCollections.observableArrayList(
+            Size.SMALL, Size.MEDIUM, Size.LARGE
     );
 
-    Map<String, ObservableList<String>> toppingsMap  = new HashMap<>();
+    Map<String, ObservableList<Topping>> toppingsMap  = new HashMap<>();
 
     @FXML
     void initialize() {
@@ -69,28 +70,48 @@ public class SpecialityController {
         //init toppings list
 
         toppingsMap.put("Deluxe", FXCollections.observableArrayList(
-                "Sausage", "Pepperoni", "Green Pepper", "Onion", "Mushroom"
+                Topping.SAUSAGE,
+                Topping.PEPPERONI,
+                Topping.GREEN_PEPPER,
+                Topping.BLACK_OLIVE,
+                Topping.MUSHROOM
         ));
         toppingsMap.put("Supreme", FXCollections.observableArrayList(
-                "Sausage", "Pepperoni", "Ham", "Green Pepper", "Onion", "Black Olive", "Mushroom"
+                Topping.SAUSAGE,
+                Topping.PEPPERONI,
+                Topping.HAM,
+                Topping.GREEN_PEPPER,
+                Topping.ONION,
+                Topping.BLACK_OLIVE,
+                Topping.MUSHROOM
         ));
         toppingsMap.put("Meatzza", FXCollections.observableArrayList(
-                "Sausage", "Pepperoni", "Beef", "Ham"
+                Topping.SAUSAGE,
+                Topping.PEPPERONI,
+                Topping.BEEF,
+                Topping.HAM
         ));
         toppingsMap.put("Pepperoni", FXCollections.observableArrayList(
-                "Pepperoni"
+                Topping.PEPPERONI
         ));
         toppingsMap.put("Seafood", FXCollections.observableArrayList(
-                "Shrimp", "Squid", "Crab Meats"
+                Topping.SHRIMP,
+                Topping.SQUID,
+                Topping.CRAB_MEATS
         ));
 
         toppingsList.setItems(toppingsMap.get("Deluxe"));
 
         //sauce
 
-        sauceField.setText("Tomato");
+        sauceField.setText(Sauce.TOMATO.getSauce());
+
+        //set default price
+
+        updatePrice();
     }
 
+    @FXML
     void handleTypeDropdown(ActionEvent event) {
 
         String type = typeDropdown.getValue();
@@ -109,19 +130,46 @@ public class SpecialityController {
         //sauce change
 
         if(type.equals("Seafood")){
-            sauceField.setText("Tomato");
+            sauceField.setText(Sauce.TOMATO.getSauce());
         } else {
-            sauceField.setText("Alfredo");
+            sauceField.setText(Sauce.ALFREDO.getSauce());
         }
 
+        //update price field
+
+        updatePrice();
     }
 
-    void handleSizeDropdown(ActionEvent event) {
+    @FXML
+    void handleCheckedExtraCheese() {
+        updatePrice();
+    }
 
+    @FXML
+    void handleCheckedExtraSauce() {
+        updatePrice();
+    }
+
+    @FXML
+    void handleSizeDropdown(ActionEvent event) {
+        updatePrice();
     }
 
     @FXML
     void handleAddToOrder(ActionEvent event) {
 
+    }
+
+    public void updatePrice() {
+        double price = getPizza().price();
+        priceField.setText(Double.toString(price));
+    }
+
+    public Pizza getPizza() {
+        Pizza pizza = PizzaMaker.createPizza(typeDropdown.getValue());
+        pizza.setExtraCheese(extraCheeseCheckbox.isSelected());
+        pizza.setExtraSauce(extraSauceCheckbox.isSelected());
+        pizza.setSize(sizeDropdown.getValue());
+        return pizza;
     }
 }
