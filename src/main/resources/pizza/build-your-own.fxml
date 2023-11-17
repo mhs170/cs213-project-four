@@ -16,7 +16,7 @@
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="33.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@build_your_own.jpg" />
+            <Image url="@images/build_your_own.jpg" />
          </image>
       </ImageView>
       <ComboBox fx:id="sizeDropdown" layoutX="253.0" layoutY="53.0" prefWidth="150.0" />

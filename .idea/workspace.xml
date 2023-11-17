@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="add current order ui">
+    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="add store orders ui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/CurrentOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/CurrentOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/build-your-own.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/build-your-own.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/build_your_own.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/images/build_your_own.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/current_order.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/images/current_order.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/main-menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/main-menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/speciality.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/speciality.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/specialty.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/images/specialty.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/store_orders.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/images/store_orders.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +60,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dakshal\IdeaProjects\cs213-project-four\src\main\resources\pizza\images" />
       <recent name="C:\Users\Dakshal\IdeaProjects\cs213-project-four\src\main\resources\pizza" />
       <recent name="C:\Users\Dakshal\IdeaProjects\cs213-project-four" />
     </key>
@@ -138,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700234603092</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add store orders ui">
+      <option name="closed" value="true" />
+      <created>1700235414268</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700235414268</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,7 +178,8 @@
     <MESSAGE value="add speciality pizza ui" />
     <MESSAGE value="add build your own pizza ui" />
     <MESSAGE value="add current order ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="add current order ui" />
+    <MESSAGE value="add store orders ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="add store orders ui" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -35,7 +35,7 @@
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@specialty.jpg" />
+                        <Image url="@images/specialty.jpg" />
                      </image>
                   </ImageView>
                </graphic>
@@ -44,7 +44,7 @@
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@build_your_own.jpg" />
+                        <Image url="@images/build_your_own.jpg" />
                      </image>
                   </ImageView>
                </graphic>
@@ -53,7 +53,7 @@
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@current_order.jpg" />
+                        <Image url="@images/current_order.jpg" />
                      </image>
                   </ImageView>
                </graphic>
@@ -62,7 +62,7 @@
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@store_orders.jpg" />
+                        <Image url="@images/store_orders.jpg" />
                      </image>
                   </ImageView>
                </graphic>
