@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="add speciality pizza ui">
+    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="add build your own pizza ui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +121,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700158696305</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add build your own pizza ui">
+      <option name="closed" value="true" />
+      <created>1700172094892</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700172094892</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,7 +150,8 @@
     <MESSAGE value="fix naming of module folders" />
     <MESSAGE value="types of pizza classes" />
     <MESSAGE value="add speciality pizza ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="add speciality pizza ui" />
+    <MESSAGE value="add build your own pizza ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="add build your own pizza ui" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
