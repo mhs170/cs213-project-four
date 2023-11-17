@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 public class CurrentOrderController {
 
     @FXML
-    private ListView<?> orderList;
+    private ListView<String> orderList;
 
     @FXML
     private TextField orderNumberField;
