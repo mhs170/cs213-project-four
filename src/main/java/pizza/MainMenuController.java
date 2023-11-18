@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.List;
 
 public class MainMenuController {
 
@@ -29,9 +30,14 @@ public class MainMenuController {
 
     private StoreOrders storeOrders;
 
+    private StoreOrdersController storeOrderController;
+    private CurrentOrderController currentOrderController;
 
     public void addToCurrentOrder(Pizza pizza) {
         currentOrder.addToOrder(pizza);
+        if(currentOrderController != null) {
+            currentOrderController.customInitialize();
+        }
     }
     public void removeFromCurrentOrder(Pizza pizza){
         currentOrder.removeFromOrder(pizza);
@@ -39,6 +45,18 @@ public class MainMenuController {
 
     public Order getCurrentOrder() {
         return currentOrder;
+    }
+
+    public void placeOrder () {
+        storeOrders.addOrder(currentOrder);
+        if(storeOrderController != null) {
+            storeOrderController.customInitialize();
+        }
+        currentOrder = new Order();
+    }
+
+    public StoreOrders getStoreOrdersObject() {
+        return storeOrders;
     }
 
     @FXML
@@ -94,8 +112,8 @@ public class MainMenuController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("current-order.fxml"));
             root = loader.load();
 
-            CurrentOrderController controller = loader.getController();
-            controller.setMainMenuController(this);
+            currentOrderController = loader.getController();
+            currentOrderController.setMainMenuController(this);
 
             Stage stage = new Stage();
             stage.setTitle("Current Order");
@@ -114,8 +132,8 @@ public class MainMenuController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("store-orders.fxml"));
             root = loader.load();
 
-            StoreOrdersController controller = loader.getController();
-            controller.setMainMenuController(this);
+            storeOrderController = loader.getController();
+            storeOrderController.setMainMenuController(this);
 
             Stage stage = new Stage();
             stage.setTitle("Store Orders");
