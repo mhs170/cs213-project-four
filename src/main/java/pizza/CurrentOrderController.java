@@ -44,6 +44,8 @@ public class CurrentOrderController {
 
         orderNumberField.setText(String.valueOf(num));
         orderList.setItems(list);
+        updateOrder();
+        updateSubtotal();
     }
 
     @FXML
@@ -64,7 +66,19 @@ public class CurrentOrderController {
                 currentOrder.getPizzas()
         );
         orderList.setItems(updatedList);
+        updateSubtotal();
     }
 
-
+    private double calculateSubtotal(){
+        double subtotal = 0;
+        Order currentOrder = mainMenuController.getCurrentOrder();
+        for (Pizza pizza : currentOrder.getPizzas()) {
+            subtotal += pizza.price();
+        }
+        return subtotal;
+    }
+    private void updateSubtotal() {
+        double subtotal = calculateSubtotal();
+        subtotalField.setText(String.format("%.2f", subtotal));
+    }
 }
