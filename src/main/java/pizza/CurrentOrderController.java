@@ -53,7 +53,18 @@ public class CurrentOrderController {
 
     @FXML
     void handleRemovePizza(ActionEvent event) {
-
+        Pizza pizza = orderList.getSelectionModel().getSelectedItem();
+        mainMenuController.removeFromCurrentOrder(pizza);
+        updateOrder();
     }
+
+    private void updateOrder() {
+        Order currentOrder = mainMenuController.getCurrentOrder();
+        ObservableList<Pizza> updatedList = FXCollections.observableList(
+                currentOrder.getPizzas()
+        );
+        orderList.setItems(updatedList);
+    }
+
 
 }

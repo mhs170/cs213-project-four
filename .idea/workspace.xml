@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="finish updating price in speciality pizza window">
+    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="remove method in orders">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwnController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pizza/CurrentOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/CurrentOrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Pizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Pizza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/PizzaMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/PizzaMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/StoreOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/StoreOrders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/StoreOrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/StoreOrdersController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700264585950</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="remove method in orders">
+      <option name="closed" value="true" />
+      <created>1700268875661</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1700268875661</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -206,6 +207,7 @@
     <MESSAGE value="change pizzas constructors to just use default toppings for that pizza type" />
     <MESSAGE value="add order and store order classes" />
     <MESSAGE value="finish updating price in speciality pizza window" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish updating price in speciality pizza window" />
+    <MESSAGE value="remove method in orders" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove method in orders" />
   </component>
 </project>

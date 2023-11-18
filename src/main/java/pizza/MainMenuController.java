@@ -33,6 +33,9 @@ public class MainMenuController {
     public void addToCurrentOrder(Pizza pizza) {
         currentOrder.addToOrder(pizza);
     }
+    public void removeFromCurrentOrder(Pizza pizza){
+        currentOrder.removeFromOrder(pizza);
+    }
 
     public Order getCurrentOrder() {
         return currentOrder;
