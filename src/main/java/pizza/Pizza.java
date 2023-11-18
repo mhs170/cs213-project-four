@@ -41,4 +41,16 @@ public abstract class Pizza {
     public void setSauce(Sauce sauce){
         this.sauce = sauce;
     }
+
+    @Override
+    public String toString() {
+        return  String.format("[%s] [%s] %s %s %s $%s",
+                    this.getClass().getSimpleName(),
+                    size,
+                    toppings,
+                    extraCheese ? "Extra Cheese, " : "",
+                    extraSauce ? "Extra Sauce" : "",
+                    price()
+                );
+    }
 }

@@ -24,11 +24,36 @@ public class MainMenuController {
 
     @FXML
     private Button storeOrdersButton;
+
+    private Order currentOrder;
+
+    private StoreOrders storeOrders;
+
+
+    public void addToCurrentOrder(Pizza pizza) {
+        currentOrder.addToOrder(pizza);
+    }
+
+    public Order getCurrentOrder() {
+        return currentOrder;
+    }
+
+    @FXML
+    void initialize() {
+        currentOrder = new Order();
+        storeOrders = new StoreOrders();
+    }
+
     @FXML
     void handleSpeciality(ActionEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("speciality.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("speciality.fxml"));
+            root = loader.load();
+
+            SpecialityController controller = loader.getController();
+            controller.setMainMenuController(this);
+
             Stage stage = new Stage();
             stage.setTitle("Order Speciality Pizzas");
             stage.setScene(new Scene(root, 450, 500));
@@ -43,7 +68,12 @@ public class MainMenuController {
     void handleBuildYourOwn(ActionEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("build-your-own.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("build-your-own.fxml"));
+            root = loader.load();
+
+            BuildYourOwnController controller = loader.getController();
+            controller.setMainMenuController(this);
+
             Stage stage = new Stage();
             stage.setTitle("Customize Your Pizza");
             stage.setScene(new Scene(root, 450, 600));
@@ -58,7 +88,12 @@ public class MainMenuController {
     void handleCurrOrder(ActionEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("current-order.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("current-order.fxml"));
+            root = loader.load();
+
+            CurrentOrderController controller = loader.getController();
+            controller.setMainMenuController(this);
+
             Stage stage = new Stage();
             stage.setTitle("Current Order");
             stage.setScene(new Scene(root, 600, 450));
@@ -73,7 +108,12 @@ public class MainMenuController {
     void handleStoreOrders(ActionEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("store-orders.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("store-orders.fxml"));
+            root = loader.load();
+
+            StoreOrdersController controller = loader.getController();
+            controller.setMainMenuController(this);
+
             Stage stage = new Stage();
             stage.setTitle("Store Orders");
             stage.setScene(new Scene(root, 600, 400));

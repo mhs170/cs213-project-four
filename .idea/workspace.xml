@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="change pizzas constructors to just use default toppings for that pizza type">
+    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="finish updating price in speciality pizza window">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwnController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/CurrentOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/CurrentOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Pizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Pizza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/PizzaMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/PizzaMaker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/speciality.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/speciality.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/StoreOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/StoreOrders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/StoreOrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/StoreOrdersController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +163,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700263804438</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add order and store order classes">
+      <option name="closed" value="true" />
+      <created>1700264556512</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700264556512</updated>
+    </task>
+    <task id="LOCAL-00012" summary="finish updating price in speciality pizza window">
+      <option name="closed" value="true" />
+      <created>1700264585950</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1700264585950</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,6 +204,8 @@
     <MESSAGE value="add current order ui" />
     <MESSAGE value="add store orders ui" />
     <MESSAGE value="change pizzas constructors to just use default toppings for that pizza type" />
-    <option name="LAST_COMMIT_MESSAGE" value="change pizzas constructors to just use default toppings for that pizza type" />
+    <MESSAGE value="add order and store order classes" />
+    <MESSAGE value="finish updating price in speciality pizza window" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish updating price in speciality pizza window" />
   </component>
 </project>

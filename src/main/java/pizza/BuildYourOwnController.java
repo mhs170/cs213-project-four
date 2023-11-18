@@ -8,6 +8,12 @@ import javafx.scene.control.*;
 
 public class BuildYourOwnController {
 
+    private MainMenuController mainMenuController;
+
+    void setMainMenuController(MainMenuController controller) {
+        mainMenuController = controller;
+    }
+
     @FXML
     private Button addToOrderButton;
 

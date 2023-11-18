@@ -15,6 +15,12 @@ import javafx.scene.image.Image;
 
 public class SpecialityController {
 
+    private MainMenuController mainMenuController;
+
+    void setMainMenuController(MainMenuController controller) {
+        mainMenuController = controller;
+    }
+
     @FXML
     private Button addToOrderButton;
 
@@ -157,7 +163,11 @@ public class SpecialityController {
 
     @FXML
     void handleAddToOrder(ActionEvent event) {
-
+        mainMenuController.addToCurrentOrder(getPizza());
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Successfully added");
+        alert.setContentText("Pizza was successfully added to the order");
+        alert.show();
     }
 
     public void updatePrice() {

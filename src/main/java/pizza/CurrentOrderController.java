@@ -1,5 +1,7 @@
 package pizza;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,8 +10,10 @@ import javafx.scene.control.TextField;
 
 public class CurrentOrderController {
 
+    private MainMenuController mainMenuController;
+
     @FXML
-    private ListView<String> orderList;
+    private ListView<Pizza> orderList;
 
     @FXML
     private TextField orderNumberField;
@@ -28,6 +32,19 @@ public class CurrentOrderController {
 
     @FXML
     private TextField subtotalField;
+
+    void setMainMenuController(MainMenuController controller) {
+        mainMenuController = controller;
+
+        Order currentOrder = mainMenuController.getCurrentOrder();
+        int num = currentOrder.getOrderNumber();
+        ObservableList<Pizza> list = FXCollections.observableList(
+                currentOrder.getPizzas()
+        );
+
+        orderNumberField.setText(String.valueOf(num));
+        orderList.setItems(list);
+    }
 
     @FXML
     void handlePlaceOrder(ActionEvent event) {
