@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="change pizzas constructors to just use default toppings for that pizza type">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pizza/speciality.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pizza/speciality.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Order.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +61,7 @@
   <component name="RunManager">
     <configuration name="Run main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="pizza.MainApplication" />
-      <module name="cs213-project-four" />
+      <module name="pizza" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
