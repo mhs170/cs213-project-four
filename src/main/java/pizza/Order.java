@@ -23,4 +23,7 @@ public class Order {
     public void addToOrder(Pizza pizza) {
         this.pizzas.add(pizza);
     }
+    public void removeFromOrder(Pizza pizza){
+        this.pizzas.remove(pizza);
+    }
 }

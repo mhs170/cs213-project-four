@@ -68,7 +68,7 @@
   <component name="RunManager">
     <configuration name="Run main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="pizza.MainApplication" />
-      <module name="cs213-project-four" />
+      <module name="pizza" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
