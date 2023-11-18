@@ -172,7 +172,7 @@ public class SpecialityController {
 
     public void updatePrice() {
         double price = getPizza().price();
-        priceField.setText(Double.toString(price));
+        priceField.setText(String.format("%.2f", price));
     }
 
     public Pizza getPizza() {

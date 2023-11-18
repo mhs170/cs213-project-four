@@ -9,6 +9,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 public class CurrentOrderController {
+    private static final double SALES_TAX_PERCENTAGE = 0.06625;
 
     private MainMenuController mainMenuController;
 
@@ -46,6 +47,8 @@ public class CurrentOrderController {
         orderList.setItems(list);
         updateOrder();
         updateSubtotal();
+        updateTax();
+        updateTotal();
     }
 
     @FXML
@@ -67,6 +70,8 @@ public class CurrentOrderController {
         );
         orderList.setItems(updatedList);
         updateSubtotal();
+        updateTax();
+        updateTotal();
     }
 
     private double calculateSubtotal(){
@@ -80,5 +85,19 @@ public class CurrentOrderController {
     private void updateSubtotal() {
         double subtotal = calculateSubtotal();
         subtotalField.setText(String.format("%.2f", subtotal));
+    }
+    private void updateTax() {
+        double tax = calculateSalesTax();
+        salesTaxField.setText(String.format("%.2f", tax));
+    }
+    private void updateTotal() {
+        double total = calculateTotal();
+        orderTotalField.setText(String.format("%.2f", total));
+    }
+    private double calculateSalesTax(){
+        return SALES_TAX_PERCENTAGE * calculateSubtotal();
+    }
+    private double calculateTotal(){
+        return calculateSalesTax() + calculateSubtotal();
     }
 }
