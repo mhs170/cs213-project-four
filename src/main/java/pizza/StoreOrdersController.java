@@ -76,10 +76,14 @@ public class StoreOrdersController {
 
     void showOrder(int orderNumber) {
         StoreOrders storeOrders = this.mainMenuController.getStoreOrdersObject();
+        Order currOrder = storeOrders.getOrder(orderNumber);
         ObservableList<Pizza> pizzas = FXCollections.observableList(
-                storeOrders.getOrder(orderNumber).getPizzas()
+                currOrder.getPizzas()
         );
         orderList.setItems(pizzas);
+
+        double total = currOrder.getTotal();
+        orderTotalField.setText(String.format("%.2f", total));
     }
 
     @FXML
