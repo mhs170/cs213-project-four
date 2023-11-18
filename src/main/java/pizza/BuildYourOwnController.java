@@ -36,13 +36,29 @@ public class BuildYourOwnController {
     private Button removeToppingButton;
 
     @FXML
-    private ComboBox<String> sauceDropdown;
+    private ComboBox<Sauce> sauceDropdown;
 
     @FXML
     private ListView<String> selectedToppingsList;
 
     @FXML
-    private ComboBox<String> sizeDropdown;
+    private ComboBox<Size> sizeDropdown;
+
+    ObservableList<Size> sizes = FXCollections.observableArrayList(
+            Size.SMALL, Size.MEDIUM, Size.LARGE
+    );
+
+    ObservableList<Sauce> sauces = FXCollections.observableArrayList(
+            Sauce.TOMATO, Sauce.ALFREDO
+    );
+    @FXML
+    void initialize(){
+        sizeDropdown.setItems(sizes);
+        sizeDropdown.getSelectionModel().selectFirst();
+
+        sauceDropdown.setItems(sauces);
+        sauceDropdown.getSelectionModel().selectFirst();
+    }
 
     @FXML
     void handleAddToOrder(ActionEvent event) {
@@ -67,5 +83,16 @@ public class BuildYourOwnController {
     @FXML
     void removeTopping(ActionEvent event) {
 
+    }
+    public void updatePrice() {
+        double price = getPizza().price();
+        priceField.setText(String.format("%.2f", price));
+    }
+    public Pizza getPizza() {
+        Pizza pizza = PizzaMaker.createPizza("BuildYourOwn");
+        pizza.setExtraCheese(extraCheeseCheckbox.isSelected());
+        pizza.setExtraSauce(extraSauceCheckbox.isSelected());
+        pizza.setSize(sizeDropdown.getValue());
+        return pizza;
     }
 }
