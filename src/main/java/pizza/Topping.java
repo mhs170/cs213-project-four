@@ -12,7 +12,10 @@ public enum Topping {
     BEEF("Beef"),
     SHRIMP("Shrimp"),
     SQUID("Squid"),
-    CRAB_MEATS("Crab Meats");
+    CRAB_MEATS("Crab Meats"),
+    //2 extra toppings to reach 13 possible toppings for the build your own pizza
+    CHICKEN("Chicken"),
+    PINEAPPLE("Pineapple");
 
     private final String topping;
 

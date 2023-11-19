@@ -46,6 +46,7 @@ public class StoreOrdersController {
             orderDropdown.setDisable(true);
             orderList.setItems(null);
             orderList.setDisable(true);
+            orderTotalField.setText("00.00");
             cancelOrderButton.setDisable(true);
             exportStoreOrdersButton.setDisable(true);
             exportStoreOrdersButton.setText("There are no orders.");

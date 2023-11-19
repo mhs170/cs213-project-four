@@ -16,7 +16,7 @@ public class PizzaMaker {
             case "Seafood" -> new Seafood(Size.SMALL, Sauce.ALFREDO,
                     false, false, 0);
             case "BuildYourOwn" ->
-                    new BuildYourOwn(null, Size.SMALL, Sauce.TOMATO
+                    new BuildYourOwn(new ArrayList<Topping>(), Size.SMALL, Sauce.TOMATO
                             , false, false, 0);
             default ->
                     throw new IllegalStateException("Unexpected value: " + pizzaType);

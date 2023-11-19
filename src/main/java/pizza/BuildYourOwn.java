@@ -37,6 +37,10 @@ public class BuildYourOwn extends Pizza {
         if (extraSauce){
             price += 1;
         }
+        if(toppings.size() > 3) {
+            int additionalToppings = toppings.size() - 3;
+            price += (1.49 * additionalToppings);
+        }
         return price;
     }
 }

@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="finish place order and cancel order in store orders">
+    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="add order total to StoreOrders ui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/CurrentOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/CurrentOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwnController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/PizzaMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/PizzaMaker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pizza/StoreOrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/StoreOrdersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Topping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Topping.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,13 +47,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Dakshal\IdeaProjects\cs213-project-four\src\main\resources\pizza\images" />
@@ -213,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700350832143</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add order total to StoreOrders ui">
+      <option name="closed" value="true" />
+      <created>1700351641204</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1700351641204</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,6 +256,11 @@
     <MESSAGE value="update subtotal" />
     <MESSAGE value="update tax and total in CurrentOrderController" />
     <MESSAGE value="finish place order and cancel order in store orders" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish place order and cancel order in store orders" />
+    <MESSAGE value="add order total to StoreOrders ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="add order total to StoreOrders ui" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
