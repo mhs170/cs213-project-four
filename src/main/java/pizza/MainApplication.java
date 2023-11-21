@@ -9,7 +9,16 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Class that runs the application
+ * @author Mohammed Salama, Dakshal Panicker
+ */
 public class  MainApplication extends Application {
+    /**
+     * Start the application
+     * @param stage inputted stage
+     * @throws IOException the exception thrown
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader =

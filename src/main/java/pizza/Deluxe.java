@@ -3,6 +3,10 @@ package pizza;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Deluxe pizza type
+ * @author Mohammed Salama, Dakshal Panicker
+ */
 public class Deluxe extends Pizza {
     private static final Sauce SAUCE = Sauce.TOMATO;
     private static final double SMALL_PRICE = 14.99;
@@ -48,17 +52,5 @@ public class Deluxe extends Pizza {
             price += 1;
         }
         return price;
-    }
-
-    /**
-     * Method that sets toppings for deluxe pizza
-     * @param toppings
-     */
-    public void addToppings(ArrayList<Topping> toppings){
-        toppings.add(Topping.SAUSAGE);
-        toppings.add(Topping.PEPPERONI);
-        toppings.add(Topping.GREEN_PEPPER);
-        toppings.add(Topping.ONION);
-        toppings.add(Topping.MUSHROOM);
     }
 }

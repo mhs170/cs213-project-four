@@ -1,5 +1,9 @@
 package pizza;
 
+/**
+ * Sauce enum class for two sauce types
+ * @author Mohammed Salama, Dakshal Panicker
+ */
 public enum Sauce {
     TOMATO ("Tomato"),
     ALFREDO ("Alfredo");
@@ -20,6 +24,11 @@ public enum Sauce {
     public String getSauce(){
         return sauce;
     }
+
+    /**
+     * To string method
+     * @return sauce as string
+     */
     @Override
     public String toString() {
         return sauce;

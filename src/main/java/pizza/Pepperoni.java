@@ -3,6 +3,10 @@ package pizza;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Pepperoni pizza type
+ * @author Mohammed Salama, Dakshal Panicker
+ */
 public class Pepperoni extends Pizza {
     private static final Sauce SAUCE = Sauce.TOMATO;
     private static final double SMALL_PRICE = 10.99;
@@ -44,8 +48,5 @@ public class Pepperoni extends Pizza {
             price += 1;
         }
         return price;
-    }
-    public void addToppings(ArrayList<Topping> toppings){
-        toppings.add(Topping.PEPPERONI);
     }
 }

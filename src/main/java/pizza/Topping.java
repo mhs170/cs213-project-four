@@ -1,5 +1,9 @@
 package pizza;
 
+/**
+ * Topping enum type for 13 different types of toppings
+ * @author Mohammed Salama, Dakshal Panicker
+ */
 public enum Topping {
     //sausage, pepperoni, green pepper, onion, mushroom, ham, black olive, beef,  shrimp, squid, crab meats
     SAUSAGE ("Sausage"),
@@ -35,6 +39,10 @@ public enum Topping {
         return topping;
     }
 
+    /**
+     * To string method
+     * @return topping as a string
+     */
     @Override
     public String toString() {
         return topping;

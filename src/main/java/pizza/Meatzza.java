@@ -3,6 +3,10 @@ package pizza;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Meatzza pizza type
+ * @author Mohammed Salama, Dakshal Panicker
+ */
 public class Meatzza extends Pizza {
     private static final Sauce SAUCE = Sauce.TOMATO;
     private static final double SMALL_PRICE = 16.99;
@@ -48,11 +52,5 @@ public class Meatzza extends Pizza {
             price += 1;
         }
         return price;
-    }
-    public void addToppings(ArrayList<Topping> toppings){
-        toppings.add(Topping.SAUSAGE);
-        toppings.add(Topping.PEPPERONI);
-        toppings.add(Topping.BEEF);
-        toppings.add(Topping.HAM);
     }
 }

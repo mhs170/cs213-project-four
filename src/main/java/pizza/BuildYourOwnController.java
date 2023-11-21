@@ -8,6 +8,10 @@ import javafx.scene.control.*;
 
 import java.util.ArrayList;
 
+/**
+ * Controller for build your own pizza view
+ * @author Mohammed Salama, Dakshal Panicker
+ */
 public class BuildYourOwnController {
 
     private MainMenuController mainMenuController;
@@ -66,10 +70,17 @@ public class BuildYourOwnController {
             Topping.SHRIMP
     );
 
+    /**
+     * Set the main controller as a private variable to access its properties
+     * @param controller main controller
+     */
     void setMainMenuController(MainMenuController controller) {
         mainMenuController = controller;
     }
 
+    /**
+     * Automatically run initialize for controller
+     */
     @FXML
     void initialize(){
 
@@ -94,26 +105,46 @@ public class BuildYourOwnController {
         updatePrice();
     }
 
+    /**
+     * Handle what happens when this element is clicked
+     * @param event unused event
+     */
     @FXML
     void handleSizeDropdown(ActionEvent event) {
         updatePrice();
     }
 
+    /**
+     * Handle what happens when this element is clicked
+     * @param event unused event
+     */
     @FXML
     void handleSauceDropdown(ActionEvent event) {
         updatePrice();
     }
 
+    /**
+     * Handle what happens when this element is clicked
+     * @param event unused event
+     */
     @FXML
     void handleExtraCheese(ActionEvent event) {
         updatePrice();
     }
 
+    /**
+     * Handle what happens when this element is clicked
+     * @param event unused event
+     */
     @FXML
     void handleExtraSauce(ActionEvent event) {
         updatePrice();
     }
 
+    /**
+     * Handle what happens when this element is clicked
+     * @param event unused event
+     */
     @FXML
     void handleAddTopping(ActionEvent event) {
         Topping selectedTopping = additionalToppingsList.getSelectionModel().getSelectedItem();
@@ -142,6 +173,10 @@ public class BuildYourOwnController {
         }
     }
 
+    /**
+     * Handle what happens when this element is clicked
+     * @param event unused event
+     */
     @FXML
     void removeTopping(ActionEvent event) {
         Topping selectedTopping = selectedToppingsList.getSelectionModel().getSelectedItem();
@@ -163,6 +198,10 @@ public class BuildYourOwnController {
         }
     }
 
+    /**
+     * Handle what happens when this element is clicked
+     * @param event unused event
+     */
     @FXML
     void handleAddToOrder(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -186,12 +225,18 @@ public class BuildYourOwnController {
         alert.show();
     }
 
-
+    /**
+     * Update the price field based on the pizza inputted
+     */
     public void updatePrice() {
         double price = getPizza().price();
         priceField.setText(String.format("%.2f", price));
     }
 
+    /**
+     * Get the appropriate pizza based on inputted fields
+     * @return Pizza object
+     */
     public Pizza getPizza() {
         Pizza pizza = PizzaMaker.createPizza("BuildYourOwn");
         pizza.setToppings(new ArrayList<>(selectedToppingsList.getItems()));

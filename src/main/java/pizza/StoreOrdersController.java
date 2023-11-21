@@ -8,6 +8,10 @@ import javafx.scene.control.*;
 
 import java.util.List;
 
+/**
+ * Controller for store order view
+ * @author Mohammed Salama, Dakshal Panicker
+ */
 public class StoreOrdersController {
 
     private MainMenuController mainMenuController;
@@ -27,12 +31,19 @@ public class StoreOrdersController {
     @FXML
     private ListView<Pizza> orderList;
 
+    /**
+     * Set the main controller as a private variable to access its properties
+     * @param controller main controller
+     */
     void setMainMenuController(MainMenuController controller) {
         mainMenuController = controller;
 
         customInitialize();
     }
 
+    /**
+     * Initalize that can run as-needed, not automatically
+     */
     void customInitialize() {
 
         StoreOrders storeOrders = this.mainMenuController.getStoreOrdersObject();
@@ -75,6 +86,10 @@ public class StoreOrdersController {
         }
     }
 
+    /**
+     * Display a certain order on the ui base don its order number
+     * @param orderNumber order number
+     */
     void showOrder(int orderNumber) {
         StoreOrders storeOrders = this.mainMenuController.getStoreOrdersObject();
         Order currOrder = storeOrders.getOrder(orderNumber);
@@ -87,6 +102,10 @@ public class StoreOrdersController {
         orderTotalField.setText(String.format("%.2f", total));
     }
 
+    /**
+     * Handle the order dropdown click
+     * @param event unused event
+     */
     @FXML
     void handleOrderDropdown(ActionEvent event) {
         Integer orderNumber = orderDropdown.getValue();
@@ -95,6 +114,10 @@ public class StoreOrdersController {
         }
     }
 
+    /**
+     * Handle canceling an event
+     * @param event unused event
+     */
     @FXML
     void handleCancelOrder(ActionEvent event) {
         int orderNumber = orderDropdown.getValue();
@@ -103,6 +126,10 @@ public class StoreOrdersController {
         customInitialize();
     }
 
+    /**
+     * Handle exporting the orders
+     * @param event unused event
+     */
     @FXML
     void handleExportStoreOrders(ActionEvent event) {
 

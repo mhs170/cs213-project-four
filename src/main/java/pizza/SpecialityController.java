@@ -13,13 +13,13 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
 
+/**
+ * Controller for speciality pizza view
+ * @author Mohammed Salama, Dakshal Panicker
+ */
 public class SpecialityController {
 
     private MainMenuController mainMenuController;
-
-    void setMainMenuController(MainMenuController controller) {
-        mainMenuController = controller;
-    }
 
     @FXML
     private Button addToOrderButton;
@@ -58,6 +58,17 @@ public class SpecialityController {
 
     Map<String, ObservableList<Topping>> toppingsMap  = new HashMap<>();
 
+    /**
+     * Set the main controller as a private variable to access its properties
+     * @param controller main controller
+     */
+    void setMainMenuController(MainMenuController controller) {
+        mainMenuController = controller;
+    }
+
+    /**
+     * Initialize the fields of the form (runs automatically)
+     */
     @FXML
     void initialize() {
 
@@ -117,6 +128,10 @@ public class SpecialityController {
         updatePrice();
     }
 
+    /**
+     * Handle the type dropdown
+     * @param event usnused event
+     */
     @FXML
     void handleTypeDropdown(ActionEvent event) {
 
@@ -146,21 +161,34 @@ public class SpecialityController {
         updatePrice();
     }
 
+    /**
+     * Update price when the corresponding element changes
+     */
     @FXML
     void handleCheckedExtraCheese() {
         updatePrice();
     }
 
+    /**
+     * Update price when the corresponding element changes
+     */
     @FXML
     void handleCheckedExtraSauce() {
         updatePrice();
     }
 
+    /**
+     * Update price when the corresponding element changes
+     */
     @FXML
     void handleSizeDropdown(ActionEvent event) {
         updatePrice();
     }
 
+    /**
+     * Handle add to order button and show popup
+     * @param event
+     */
     @FXML
     void handleAddToOrder(ActionEvent event) {
         mainMenuController.addToCurrentOrder(getPizza());
@@ -170,11 +198,18 @@ public class SpecialityController {
         alert.show();
     }
 
+    /**
+     * Update price field based on calculated pizza
+     */
     public void updatePrice() {
         double price = getPizza().price();
         priceField.setText(String.format("%.2f", price));
     }
 
+    /**
+     * Generate the pizza object that corresponds to the user input
+     * @return Pizza object
+     */
     public Pizza getPizza() {
         Pizza pizza = PizzaMaker.createPizza(typeDropdown.getValue());
         pizza.setExtraCheese(extraCheeseCheckbox.isSelected());

@@ -2,7 +2,16 @@ package pizza;
 
 import java.util.ArrayList;
 
+/**
+ * Factory class for creating pizzas
+ * @author Mohammed Salama, Dakshal Panicker
+ */
 public class PizzaMaker {
+    /**
+     * Create the appropriate pizza
+     * @param pizzaType String pizza type
+     * @return the appropriate type of pizza
+     */
     public static Pizza createPizza(String pizzaType) {
         return switch (pizzaType) {
             case "Deluxe" -> new Deluxe(Size.SMALL, Sauce.TOMATO,

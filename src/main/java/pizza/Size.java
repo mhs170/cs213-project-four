@@ -1,5 +1,9 @@
 package pizza;
 
+/**
+ * Size enum class for 3 types of sizes
+ * @author Mohammed Salama, Dakshal Panicker
+ */
 public enum Size {
     SMALL("Small"),
     MEDIUM("Medium"),
@@ -22,6 +26,10 @@ public enum Size {
         return size;
     }
 
+    /**
+     * To string method
+     * @return size as string
+     */
     @Override
     public String toString() {
         return size;

@@ -3,6 +3,10 @@ package pizza;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Seafood pizza type
+ * @author Mohammed Salama, Dakshal Panicker
+ */
 public class Seafood extends Pizza {
     private static final Sauce SAUCE = Sauce.ALFREDO;
     private static final double SMALL_PRICE = 17.99;
@@ -46,10 +50,5 @@ public class Seafood extends Pizza {
             price += 1;
         }
         return price;
-    }
-    public void addToppings(ArrayList<Topping> toppings){
-        toppings.add(Topping.SHRIMP);
-        toppings.add(Topping.SQUID);
-        toppings.add(Topping.CRAB_MEATS);
     }
 }

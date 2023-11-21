@@ -2,6 +2,10 @@ package pizza;
 
 import java.util.ArrayList;
 
+/**
+ * Customizable pizza class
+ * @author Mohammed Salama, Dakshal Panicker
+ */
 public class BuildYourOwn extends Pizza {
     private static final double SMALL_PRICE = 8.99;
     /**

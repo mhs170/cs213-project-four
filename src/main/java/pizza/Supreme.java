@@ -3,6 +3,10 @@ package pizza;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Supreme pizza type
+ * @author Mohammed Salama, Dakshal Panicker
+ */
 public class Supreme extends Pizza {
     private static final Sauce SAUCE = Sauce.TOMATO;
     private static final double SMALL_PRICE = 15.99;
@@ -49,14 +53,5 @@ public class Supreme extends Pizza {
             price += 1;
         }
         return price;
-    }
-    public void addToppings(ArrayList<Topping> toppings){
-        toppings.add(Topping.SAUSAGE);
-        toppings.add(Topping.PEPPERONI);
-        toppings.add(Topping.HAM);
-        toppings.add(Topping.GREEN_PEPPER);
-        toppings.add(Topping.ONION);
-        toppings.add(Topping.BLACK_OLIVE);
-        toppings.add(Topping.MUSHROOM);
     }
 }
