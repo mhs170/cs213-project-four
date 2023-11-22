@@ -4,31 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="finish build your own order">
+    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="comment files">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_13_2023_12_21_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_13_2023_12_21_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwnController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/CurrentOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/CurrentOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Deluxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Deluxe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Meatzza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Meatzza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Pepperoni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Pepperoni.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Pizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Pizza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/PizzaMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/PizzaMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Sauce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Sauce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Seafood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Seafood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Size.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/StoreOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/StoreOrders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/StoreOrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/StoreOrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Supreme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Supreme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Topping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Topping.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,16 +47,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "git-widget-placeholder": "main",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Dakshal\IdeaProjects\cs213-project-four\src\main\resources\pizza\images" />
@@ -265,7 +243,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700358197721</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="comment files">
+      <option name="closed" value="true" />
+      <created>1700591367808</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1700591367808</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -299,7 +285,8 @@
     <MESSAGE value="finish place order and cancel order in store orders" />
     <MESSAGE value="add order total to StoreOrders ui" />
     <MESSAGE value="finish build your own order" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish build your own order" />
+    <MESSAGE value="comment files" />
+    <option name="LAST_COMMIT_MESSAGE" value="comment files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
