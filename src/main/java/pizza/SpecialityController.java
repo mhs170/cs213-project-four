@@ -151,9 +151,9 @@ public class SpecialityController {
         //sauce change
 
         if(type.equals("Seafood")){
-            sauceField.setText(Sauce.TOMATO.getSauce());
-        } else {
             sauceField.setText(Sauce.ALFREDO.getSauce());
+        } else {
+            sauceField.setText(Sauce.TOMATO.getSauce());
         }
 
         //update price field
