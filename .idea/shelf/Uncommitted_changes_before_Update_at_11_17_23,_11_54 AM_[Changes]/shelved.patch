@@ -1,0 +1,132 @@
+Index: src/main/java/pizza/MainApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package pizza;\n\nimport javafx.application.Application;\nimport javafx.fxml.FXMLLoader;\nimport javafx.scene.Scene;\nimport javafx.stage.Stage;\n\nimport java.io.IOException;\n\npublic class MainApplication extends Application {\n    @Override\n    public void start(Stage stage) throws IOException {\n        FXMLLoader fxmlLoader =\n                new FXMLLoader(MainApplication.class.getResource(\n                        \"main-menu.fxml\"\n                        ));\n        Scene scene = new Scene(fxmlLoader.load(), 320, 240);\n        stage.setTitle(\"Main Menu\");\n        stage.setScene(scene);\n        stage.show();\n        stage.setMinWidth(680);\n        stage.setMinHeight(700);\n    }\n\n    public static void main(String[] args) {\n        launch();\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/pizza/MainApplication.java b/src/main/java/pizza/MainApplication.java
+--- a/src/main/java/pizza/MainApplication.java	(revision 719a9de88c178f47d2f5ac25def9dabc6ece6bf9)
++++ b/src/main/java/pizza/MainApplication.java	(date 1699565364279)
+@@ -3,6 +3,8 @@
+ import javafx.application.Application;
+ import javafx.fxml.FXMLLoader;
+ import javafx.scene.Scene;
++import javafx.scene.control.Button;
++import javafx.scene.layout.StackPane;
+ import javafx.stage.Stage;
+ 
+ import java.io.IOException;
+@@ -21,7 +23,6 @@
+         stage.setMinWidth(680);
+         stage.setMinHeight(700);
+     }
+-
+     public static void main(String[] args) {
+         launch();
+     }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"4be04856-1c35-470f-b254-14e015cba0be\" name=\"Changes\" comment=\"types of pizza classes\">\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/MainApplication.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/MainApplication.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Enum\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MavenImportPreferences\">\n    <option name=\"generalSettings\">\n      <MavenGeneralSettings>\n        <option name=\"mavenHome\" value=\"Use Maven wrapper\" />\n      </MavenGeneralSettings>\n    </option>\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 6\n}</component>\n  <component name=\"ProjectId\" id=\"2Xuc9yXahqCBsf60lxC56vPyldu\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"C:\\Users\\Dakshal\\IdeaProjects\\cs213-project-four\\src\\main\\resources\\pizza\" />\n      <recent name=\"C:\\Users\\Dakshal\\IdeaProjects\\cs213-project-four\" />\n    </key>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"4be04856-1c35-470f-b254-14e015cba0be\" name=\"Changes\" comment=\"\" />\n      <created>1699482259844</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1699482259844</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"deluxe pizza class\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699536692791</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699536692791</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"add instructions\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699550932552</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699550932552</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"add temporary constructors to avoid erros in running ui\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699551429781</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699551429781</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"fix naming of module folders\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699551466224</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699551466224</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"types of pizza classes\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699556032234</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699556032234</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"6\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"deluxe pizza class\" />\n    <MESSAGE value=\"add instructions\" />\n    <MESSAGE value=\"add temporary constructors to avoid erros in running ui\" />\n    <MESSAGE value=\"fix naming of module folders\" />\n    <MESSAGE value=\"types of pizza classes\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"types of pizza classes\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/pizza/Meatzza.java</url>\n          <line>2</line>\n          <option name=\"timeStamp\" value=\"1\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 719a9de88c178f47d2f5ac25def9dabc6ece6bf9)
++++ b/.idea/workspace.xml	(date 1699563963940)
+@@ -4,8 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="types of pizza classes">
++    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="min width and height">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/pizza/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainApplication.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -16,6 +18,7 @@
+     <option name="RECENT_TEMPLATES">
+       <list>
+         <option value="Enum" />
++        <option value="FxmlFile" />
+         <option value="Class" />
+       </list>
+     </option>
+@@ -41,13 +44,14 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "git-widget-placeholder": "main",
++    "last_directory_selection": "/Users/mohammed/Downloads/cs213-project-four/src/main/resources/pizza"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\Users\Dakshal\IdeaProjects\cs213-project-four\src\main\resources\pizza" />
+@@ -103,7 +107,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1699556032234</updated>
+     </task>
+-    <option name="localTasksCounter" value="6" />
++    <task id="LOCAL-00006" summary="min width and height">
++      <option name="closed" value="true" />
++      <created>1699556521645</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1699556521645</updated>
++    </task>
++    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -123,7 +135,8 @@
+     <MESSAGE value="add temporary constructors to avoid erros in running ui" />
+     <MESSAGE value="fix naming of module folders" />
+     <MESSAGE value="types of pizza classes" />
+-    <option name="LAST_COMMIT_MESSAGE" value="types of pizza classes" />
++    <MESSAGE value="min width and height" />
++    <option name="LAST_COMMIT_MESSAGE" value="min width and height" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+Index: src/main/java/pizza/MainMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package pizza;\n\nimport javafx.fxml.FXML;\nimport javafx.scene.control.Label;\n\npublic class MainMenuController {\n\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/pizza/MainMenuController.java b/src/main/java/pizza/MainMenuController.java
+--- a/src/main/java/pizza/MainMenuController.java	(revision 719a9de88c178f47d2f5ac25def9dabc6ece6bf9)
++++ b/src/main/java/pizza/MainMenuController.java	(date 1699565293114)
+@@ -1,8 +1,14 @@
+ package pizza;
+ 
+ import javafx.fxml.FXML;
++import javafx.fxml.FXMLLoader;
++import javafx.scene.Parent;
++import javafx.scene.Scene;
++import javafx.scene.control.Button;
+ import javafx.scene.control.Label;
++import javafx.stage.Stage;
+ 
+ public class MainMenuController {
+-
++    @FXML
++    private Button specialtyButton;
+ }
+\ No newline at end of file

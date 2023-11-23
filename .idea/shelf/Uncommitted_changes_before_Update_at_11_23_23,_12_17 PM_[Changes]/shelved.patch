@@ -1,0 +1,299 @@
+Index: src/main/java/pizza/StoreOrdersController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package pizza;\n\nimport javafx.collections.FXCollections;\nimport javafx.collections.ObservableList;\nimport javafx.event.ActionEvent;\nimport javafx.fxml.FXML;\nimport javafx.scene.control.*;\n\nimport java.util.List;\n\n/**\n * Controller for store order view\n * @author Mohammed Salama, Dakshal Panicker\n */\npublic class StoreOrdersController {\n\n    private MainMenuController mainMenuController;\n\n    @FXML\n    private Button cancelOrderButton;\n\n    @FXML\n    private Button exportStoreOrdersButton;\n\n    @FXML\n    private ComboBox<Integer> orderDropdown;\n\n    @FXML\n    private TextField orderTotalField;\n\n    @FXML\n    private ListView<Pizza> orderList;\n\n    /**\n     * Set the main controller as a private variable to access its properties\n     * @param controller main controller\n     */\n    void setMainMenuController(MainMenuController controller) {\n        mainMenuController = controller;\n\n        customInitialize();\n    }\n\n    /**\n     * Initalize that can run as-needed, not automatically\n     */\n    void customInitialize() {\n\n        StoreOrders storeOrders = this.mainMenuController.getStoreOrdersObject();\n\n        ObservableList<Integer> orderNumbers = FXCollections.observableList(\n                storeOrders.getOrderNumbers()\n        );\n\n        if(orderNumbers.isEmpty()) {\n            orderDropdown.setValue(null);\n            orderDropdown.setDisable(true);\n            orderList.setItems(null);\n            orderList.setDisable(true);\n            orderTotalField.setText(\"00.00\");\n            cancelOrderButton.setDisable(true);\n            exportStoreOrdersButton.setDisable(true);\n            exportStoreOrdersButton.setText(\"There are no orders.\");\n        }\n        else {\n\n            //reset button text\n\n            cancelOrderButton.setDisable(false);\n            exportStoreOrdersButton.setDisable(false);\n            exportStoreOrdersButton.setText(\"Export order\");\n\n            //initialize order dropdown\n\n            orderDropdown.setDisable(false);\n            orderDropdown.setItems(orderNumbers);\n            orderDropdown.setOnAction(this::handleOrderDropdown);\n\n            //show first order\n\n            int firstOrderNum = orderNumbers.get(0);\n            orderDropdown.setValue(firstOrderNum);\n\n            orderList.setDisable(false);\n            showOrder(firstOrderNum);\n        }\n    }\n\n    /**\n     * Display a certain order on the ui base don its order number\n     * @param orderNumber order number\n     */\n    void showOrder(int orderNumber) {\n        StoreOrders storeOrders = this.mainMenuController.getStoreOrdersObject();\n        Order currOrder = storeOrders.getOrder(orderNumber);\n        ObservableList<Pizza> pizzas = FXCollections.observableList(\n                currOrder.getPizzas()\n        );\n        orderList.setItems(pizzas);\n\n        double total = currOrder.getTotal();\n        orderTotalField.setText(String.format(\"%.2f\", total));\n    }\n\n    /**\n     * Handle the order dropdown click\n     * @param event unused event\n     */\n    @FXML\n    void handleOrderDropdown(ActionEvent event) {\n        Integer orderNumber = orderDropdown.getValue();\n        if(orderNumber != null) {\n            showOrder(orderNumber);\n        }\n    }\n\n    /**\n     * Handle canceling an event\n     * @param event unused event\n     */\n    @FXML\n    void handleCancelOrder(ActionEvent event) {\n        int orderNumber = orderDropdown.getValue();\n        StoreOrders storeOrders = this.mainMenuController.getStoreOrdersObject();\n        storeOrders.removeOrder(storeOrders.getOrder(orderNumber));\n        customInitialize();\n    }\n\n    /**\n     * Handle exporting the orders\n     * @param event unused event\n     */\n    @FXML\n    void handleExportStoreOrders(ActionEvent event) {\n\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/pizza/StoreOrdersController.java b/src/main/java/pizza/StoreOrdersController.java
+--- a/src/main/java/pizza/StoreOrdersController.java	(revision fb297ced3aa2040a897d262b0e9a46fba57fa83b)
++++ b/src/main/java/pizza/StoreOrdersController.java	(date 1700670440693)
+@@ -6,6 +6,7 @@
+ import javafx.fxml.FXML;
+ import javafx.scene.control.*;
+ 
++import java.io.FileNotFoundException;
+ import java.util.List;
+ 
+ /**
+@@ -131,8 +132,9 @@
+      * @param event unused event
+      */
+     @FXML
+-    void handleExportStoreOrders(ActionEvent event) {
+-
++    void handleExportStoreOrders(ActionEvent event) throws FileNotFoundException {
++        StoreOrders storeOrders = this.mainMenuController.getStoreOrdersObject();
++        storeOrders.export();
+     }
+ 
+ }
+Index: src/main/java/pizza/Order.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package pizza;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\n/**\n * Object that stores a single order\n * @author Mohammed Salama, Dakshal Panicker\n */\npublic class Order {\n    private int orderNumber;\n    private List<Pizza> pizzas;\n\n    private static final double SALES_TAX_PERCENTAGE = 0.06625;\n\n    /**\n     * Constructor for order, gets next order number from static storeorders\n     * class\n     */\n    public Order() {\n        this.orderNumber = StoreOrders.getNextOrderNumber();\n        this.pizzas = new ArrayList<Pizza>();\n    }\n\n    /**\n     * Get the order number\n     * @return order number int\n     */\n    public int getOrderNumber() {\n        return orderNumber;\n    }\n\n    /**\n     * Return pizzas in order\n     * @return pizzas list\n     */\n    public List<Pizza> getPizzas() {\n        return pizzas;\n    }\n\n    /**\n     * Add a pizza to the order\n     * @param pizza Pizza obj\n     */\n    public void addToOrder(Pizza pizza) {\n        this.pizzas.add(pizza);\n    }\n\n    /**\n     * Remove a pizza from the order\n     * @param pizza Pizza obj\n     */\n    public void removeFromOrder(Pizza pizza){\n        this.pizzas.remove(pizza);\n    }\n\n    /**\n     * Return subtotal of order\n     * @return double subtotal\n     */\n    public double getSubtotal(){\n        double subtotal = 0;\n        for (Pizza pizza : pizzas) {\n            subtotal += pizza.price();\n        }\n        return subtotal;\n    }\n\n    /**\n     * Get sales tax\n     * @return double sales tax\n     */\n    public double getSalesTax(){\n        return SALES_TAX_PERCENTAGE * getSubtotal();\n    }\n\n    /**\n     * Return subtotal + sales tax\n     * @return double total\n     */\n    public double getTotal(){\n        return getSalesTax() + getSubtotal();\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/pizza/Order.java b/src/main/java/pizza/Order.java
+--- a/src/main/java/pizza/Order.java	(revision fb297ced3aa2040a897d262b0e9a46fba57fa83b)
++++ b/src/main/java/pizza/Order.java	(date 1700670276685)
+@@ -81,4 +81,20 @@
+     public double getTotal(){
+         return getSalesTax() + getSubtotal();
+     }
++    @Override
++    public String toString() {
++        StringBuilder stringBuilder = new StringBuilder();
++        stringBuilder.append("Order Number: ").append(orderNumber).append("\n");
++
++        stringBuilder.append("Pizzas in Order:\n");
++        for (Pizza pizza : pizzas) {
++            stringBuilder.append("- ").append(pizza).append("\n");
++        }
++
++        stringBuilder.append("Subtotal: $").append(String.format("%.2f", getSubtotal())).append("\n");
++        stringBuilder.append("Sales Tax: $").append(String.format("%.2f", getSalesTax())).append("\n");
++        stringBuilder.append("Total: $").append(String.format("%.2f", getTotal())).append("\n");
++
++        return stringBuilder.toString();
++    }
+ }
+Index: src/main/java/pizza/StoreOrders.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package pizza;\n\nimport javafx.collections.FXCollections;\nimport javafx.collections.ObservableList;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\n/**\n * Store orders class that holds order objects\n * @author Mohammed Salama, Dakshal Panicker\n */\npublic class StoreOrders {\n    private static int nextOrderNumber; //automatically initialized to 0\n    private List<Order> orders;\n\n    /**\n     * Get next order number based on static counter\n     * @return the next order number\n     */\n    public static int getNextOrderNumber() {\n        nextOrderNumber ++;\n        return nextOrderNumber;\n    }\n\n    /**\n     * Constructor for store order, intializing with empty list\n     */\n    public StoreOrders() {\n        this.orders = new ArrayList<>();\n    }\n\n    /**\n     * Add an order\n     * @param order order to add\n     */\n    public void addOrder(Order order) {\n        this.orders.add(order);\n    }\n\n    /**\n     * Remove an order\n     * @param order order to remove\n     */\n    public void removeOrder(Order order) {\n        this.orders.remove(order);\n    }\n\n    /**\n     * Get numbers of all orders in a list of ints\n     * @return int list of order numbers\n     */\n    public List<Integer> getOrderNumbers() {\n        List<Integer> orderNumbers = new ArrayList<>();\n        for(Order order : orders) {\n            orderNumbers.add(order.getOrderNumber());\n        }\n        return orderNumbers;\n    }\n\n    /**\n     * Get order from orders based on order number\n     * @param orderNumber order number inputted\n     * @return order object outputted\n     */\n    public Order getOrder(int orderNumber) {\n        for(Order order: orders) {\n            if(order.getOrderNumber() == orderNumber) {\n                return order;\n            }\n        }\n        return null;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/pizza/StoreOrders.java b/src/main/java/pizza/StoreOrders.java
+--- a/src/main/java/pizza/StoreOrders.java	(revision fb297ced3aa2040a897d262b0e9a46fba57fa83b)
++++ b/src/main/java/pizza/StoreOrders.java	(date 1700670601559)
+@@ -1,8 +1,9 @@
+ package pizza;
+ 
+-import javafx.collections.FXCollections;
+-import javafx.collections.ObservableList;
++import javafx.stage.FileChooser;
++import javafx.stage.Stage;
+ 
++import java.io.*;
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+@@ -71,4 +72,24 @@
+         }
+         return null;
+     }
++
++    /**
++     * Method to save the store orders to an external text file
++     */
++    public void export() throws FileNotFoundException {
++        FileChooser fileChooser = new FileChooser();
++        fileChooser.setTitle("Save store orders");
++        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
++        File file = fileChooser.showSaveDialog(new Stage());
++        if(file != null) {
++            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
++                for (Order order : orders) {
++                    writer.write(order.toString());
++                    writer.newLine();
++                }
++            } catch (IOException e) {
++                System.out.println("Error");
++            }
++        }
++    }
+ }
+Index: src/test/java/pizza/BuildYourOwnTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package pizza;\n\nimport org.junit.Test;\n\nimport static org.junit.Assert.*;\n\n/**\n * Test class for build your own\n * @author Mohammed Salama, Dakshal Panicker\n */\npublic class BuildYourOwnTest {\n\n    @Test\n    public void testBasePrice() {\n\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/pizza/BuildYourOwnTest.java b/src/test/java/pizza/BuildYourOwnTest.java
+--- a/src/test/java/pizza/BuildYourOwnTest.java	(revision fb297ced3aa2040a897d262b0e9a46fba57fa83b)
++++ b/src/test/java/pizza/BuildYourOwnTest.java	(date 1700759855720)
+@@ -11,7 +11,20 @@
+ public class BuildYourOwnTest {
+ 
+     @Test
+-    public void testBasePrice() {
++    public void testBasePriceSmall() {
++        Pizza test = PizzaMaker.createPizza("BuildYourOwn");
++        test.size = Size.SMALL;
++        assertEquals(8.99, test.price(), 0);
++        test.size = Size.MEDIUM;
++        assertEquals(10.99, test.price(), 0);
++        test.size = Size.LARGE;
++        assertEquals(12.99, test.price(), 0);
++    }
++
++    @Test
++    public void testOneTopping(){
++        Pizza test = PizzaMaker.createPizza("BuildYourOwn");
++        test.size = Size.SMALL;
+ 
+     }
+ }
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"4be04856-1c35-470f-b254-14e015cba0be\" name=\"Changes\" comment=\"finish build your own order\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_13_2023_12_21_PM_[Changes]/shelved.patch\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_13_2023_12_21_PM__Changes_.xml\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/pom.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/BuildYourOwn.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/BuildYourOwn.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/BuildYourOwnController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/BuildYourOwnController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/CurrentOrderController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/CurrentOrderController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/Deluxe.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/Deluxe.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/MainApplication.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/MainApplication.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/Meatzza.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/Meatzza.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/Order.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/Order.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/Pepperoni.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/Pepperoni.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/Pizza.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/Pizza.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/PizzaMaker.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/PizzaMaker.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/Sauce.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/Sauce.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/Seafood.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/Seafood.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/Size.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/Size.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/StoreOrders.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/StoreOrders.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/StoreOrdersController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/StoreOrdersController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/Supreme.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/Supreme.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pizza/Topping.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pizza/Topping.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Enum\" />\n        <option value=\"FxmlFile\" />\n        <option value=\"Class\" />\n        <option value=\"JUnit4 Test Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MavenImportPreferences\">\n    <option name=\"generalSettings\">\n      <MavenGeneralSettings>\n        <option name=\"mavenHome\" value=\"Use Maven wrapper\" />\n      </MavenGeneralSettings>\n    </option>\n  </component>\n  <component name=\"ProblemsViewState\">\n    <option name=\"selectedTabId\" value=\"ProjectErrors\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 6\n}</component>\n  <component name=\"ProjectId\" id=\"2Xuc9yXahqCBsf60lxC56vPyldu\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary\": \"JUnit4\",\n    \"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4\": \"\",\n    \"git-widget-placeholder\": \"main\",\n    \"settings.editor.selected.configurable\": \"editor.preferences.fonts.default\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"C:\\Users\\Dakshal\\IdeaProjects\\cs213-project-four\\src\\main\\resources\\pizza\\images\" />\n      <recent name=\"C:\\Users\\Dakshal\\IdeaProjects\\cs213-project-four\\src\\main\\resources\\pizza\" />\n      <recent name=\"C:\\Users\\Dakshal\\IdeaProjects\\cs213-project-four\" />\n    </key>\n    <key name=\"CreateTestDialog.Recents.Supers\">\n      <recent name=\"\" />\n    </key>\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\n      <recent name=\"pizza\" />\n    </key>\n    <key name=\"CreateTestDialog.RecentsKey\">\n      <recent name=\"pizza\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Run main\" type=\"Application\" factoryName=\"Application\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"pizza.MainApplication\" />\n      <module name=\"pizza\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"4be04856-1c35-470f-b254-14e015cba0be\" name=\"Changes\" comment=\"\" />\n      <created>1699482259844</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1699482259844</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"deluxe pizza class\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699536692791</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699536692791</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"add instructions\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699550932552</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699550932552</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"add temporary constructors to avoid erros in running ui\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699551429781</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699551429781</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"fix naming of module folders\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699551466224</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699551466224</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"types of pizza classes\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1699556032234</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1699556032234</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"add speciality pizza ui\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700158696305</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700158696305</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"add build your own pizza ui\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700172094892</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700172094892</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"add current order ui\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700234603092</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700234603092</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"add store orders ui\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700235414268</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700235414268</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"change pizzas constructors to just use default toppings for that pizza type\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700263804438</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700263804438</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"add order and store order classes\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700264556512</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700264556512</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"finish updating price in speciality pizza window\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700264585950</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700264585950</updated>\n    </task>\n    <task id=\"LOCAL-00013\" summary=\"remove method in orders\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700268875661</created>\n      <option name=\"number\" value=\"00013\" />\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700268875661</updated>\n    </task>\n    <task id=\"LOCAL-00014\" summary=\"remove button in CurrentOrderController\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700270518089</created>\n      <option name=\"number\" value=\"00014\" />\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700270518090</updated>\n    </task>\n    <task id=\"LOCAL-00015\" summary=\"update subtotal\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700273665009</created>\n      <option name=\"number\" value=\"00015\" />\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700273665009</updated>\n    </task>\n    <task id=\"LOCAL-00016\" summary=\"update tax and total in CurrentOrderController\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700276288038</created>\n      <option name=\"number\" value=\"00016\" />\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700276288038</updated>\n    </task>\n    <task id=\"LOCAL-00017\" summary=\"finish place order and cancel order in store orders\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700350832143</created>\n      <option name=\"number\" value=\"00017\" />\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700350832143</updated>\n    </task>\n    <task id=\"LOCAL-00018\" summary=\"add order total to StoreOrders ui\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700351641204</created>\n      <option name=\"number\" value=\"00018\" />\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700351641204</updated>\n    </task>\n    <task id=\"LOCAL-00019\" summary=\"finish build your own order\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1700358197721</created>\n      <option name=\"number\" value=\"00019\" />\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1700358197721</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"20\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"deluxe pizza class\" />\n    <MESSAGE value=\"add instructions\" />\n    <MESSAGE value=\"add temporary constructors to avoid erros in running ui\" />\n    <MESSAGE value=\"fix naming of module folders\" />\n    <MESSAGE value=\"types of pizza classes\" />\n    <MESSAGE value=\"add speciality pizza ui\" />\n    <MESSAGE value=\"add build your own pizza ui\" />\n    <MESSAGE value=\"add current order ui\" />\n    <MESSAGE value=\"add store orders ui\" />\n    <MESSAGE value=\"change pizzas constructors to just use default toppings for that pizza type\" />\n    <MESSAGE value=\"add order and store order classes\" />\n    <MESSAGE value=\"finish updating price in speciality pizza window\" />\n    <MESSAGE value=\"remove method in orders\" />\n    <MESSAGE value=\"remove button in CurrentOrderController\" />\n    <MESSAGE value=\"update subtotal\" />\n    <MESSAGE value=\"update tax and total in CurrentOrderController\" />\n    <MESSAGE value=\"finish place order and cancel order in store orders\" />\n    <MESSAGE value=\"add order total to StoreOrders ui\" />\n    <MESSAGE value=\"finish build your own order\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"finish build your own order\" />\n  </component>\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\n    <expand />\n    <select />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision fb297ced3aa2040a897d262b0e9a46fba57fa83b)
++++ b/.idea/workspace.xml	(date 1700759633959)
+@@ -4,31 +4,12 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="finish build your own order">
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_13_2023_12_21_PM_[Changes]/shelved.patch" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_13_2023_12_21_PM__Changes_.xml" beforeDir="false" />
++    <list default="true" id="4be04856-1c35-470f-b254-14e015cba0be" name="Changes" comment="`started build your own`">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwn.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/BuildYourOwnController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/CurrentOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/CurrentOrderController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Deluxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Deluxe.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainApplication.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/MainMenuController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Meatzza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Meatzza.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Order.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Pepperoni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Pepperoni.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Pizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Pizza.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/PizzaMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/PizzaMaker.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Sauce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Sauce.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Seafood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Seafood.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Size.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/SpecialityController.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/pizza/StoreOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/StoreOrders.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/pizza/StoreOrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/StoreOrdersController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Supreme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Supreme.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pizza/Topping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pizza/Topping.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/test/java/pizza/BuildYourOwnTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pizza/BuildYourOwnTest.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -69,16 +50,16 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+-    "git-widget-placeholder": "main",
+-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
++    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\Users\Dakshal\IdeaProjects\cs213-project-four\src\main\resources\pizza\images" />
+@@ -95,7 +76,7 @@
+       <recent name="pizza" />
+     </key>
+   </component>
+-  <component name="RunManager">
++  <component name="RunManager" selected="Application.Run main">
+     <configuration name="Run main" type="Application" factoryName="Application">
+       <option name="MAIN_CLASS_NAME" value="pizza.MainApplication" />
+       <module name="pizza" />
+@@ -103,6 +84,78 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
++    <configuration name="BuildYourOwnTest.testBasePrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="pizza" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="pizza.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="pizza" />
++      <option name="MAIN_CLASS_NAME" value="pizza.BuildYourOwnTest" />
++      <option name="METHOD_NAME" value="testBasePrice" />
++      <option name="TEST_OBJECT" value="method" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="BuildYourOwnTest.testBasePriceLarge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="pizza" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="pizza.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="pizza" />
++      <option name="MAIN_CLASS_NAME" value="pizza.BuildYourOwnTest" />
++      <option name="METHOD_NAME" value="testBasePriceLarge" />
++      <option name="TEST_OBJECT" value="method" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="BuildYourOwnTest.testBasePriceMedium" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="pizza" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="pizza.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="pizza" />
++      <option name="MAIN_CLASS_NAME" value="pizza.BuildYourOwnTest" />
++      <option name="METHOD_NAME" value="testBasePriceMedium" />
++      <option name="TEST_OBJECT" value="method" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="BuildYourOwnTest.testBasePriceSmall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="pizza" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="pizza.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="pizza" />
++      <option name="MAIN_CLASS_NAME" value="pizza.BuildYourOwnTest" />
++      <option name="METHOD_NAME" value="testBasePriceSmall" />
++      <option name="TEST_OBJECT" value="method" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="JUnit.BuildYourOwnTest.testBasePriceSmall" />
++        <item itemvalue="JUnit.BuildYourOwnTest.testBasePriceLarge" />
++        <item itemvalue="JUnit.BuildYourOwnTest.testBasePriceMedium" />
++        <item itemvalue="JUnit.BuildYourOwnTest.testBasePrice" />
++      </list>
++    </recent_temporary>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">

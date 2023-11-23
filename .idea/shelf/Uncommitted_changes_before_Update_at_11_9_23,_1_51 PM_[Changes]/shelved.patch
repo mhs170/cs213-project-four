@@ -1,0 +1,28 @@
+Index: src/main/java/pizza/HelloApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package pizza;\n\nimport javafx.application.Application;\nimport javafx.fxml.FXMLLoader;\nimport javafx.scene.Scene;\nimport javafx.stage.Stage;\n\nimport java.io.IOException;\n\npublic class HelloApplication extends Application {\n    @Override\n    public void start(Stage stage) throws IOException {\n        FXMLLoader fxmlLoader =\n                new FXMLLoader(HelloApplication.class.getResource(\"hello\" +\n                        \"-view.fxml\"));\n        Scene scene = new Scene(fxmlLoader.load(), 320, 240);\n        stage.setTitle(\"Hello!\");\n        stage.setScene(scene);\n        stage.show();\n    }\n\n    public static void main(String[] args) {\n        launch();\n    }\n}
+===================================================================
+diff --git a/src/main/java/pizza/HelloApplication.java b/src/main/java/pizza/HelloApplication.java
+--- a/src/main/java/pizza/HelloApplication.java	
++++ b/src/main/java/pizza/HelloApplication.java	
+@@ -11,12 +11,15 @@
+     @Override
+     public void start(Stage stage) throws IOException {
+         FXMLLoader fxmlLoader =
+-                new FXMLLoader(HelloApplication.class.getResource("hello" +
+-                        "-view.fxml"));
+-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+-        stage.setTitle("Hello!");
++                new FXMLLoader(HelloApplication.class.getResource(
++                        "hello-view.fxml"));
++        Scene scene = new Scene(fxmlLoader.load(), 500, 500);
++        stage.setTitle("Project 3 - Transaction Manager");
+         stage.setScene(scene);
+         stage.show();
++        //prevent window from being too small
++        stage.setMinWidth(680);
++        stage.setMinHeight(700);
+     }
+ 
+     public static void main(String[] args) {
