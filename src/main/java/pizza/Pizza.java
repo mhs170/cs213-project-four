@@ -80,7 +80,7 @@ public abstract class Pizza {
      */
     @Override
     public String toString() {
-        return  String.format("[%s] [%s] %s %s %s $%s",
+        return  String.format("[%s] [%s] %s %s %s %.2f",
                     this.getClass().getSimpleName(),
                     size,
                     toppings,
