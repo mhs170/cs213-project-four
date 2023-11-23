@@ -1,8 +1,9 @@
 package pizza;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,5 +71,25 @@ public class StoreOrders {
             }
         }
         return null;
+    }
+
+    /**
+     * Method to save the store orders to an external text file
+     */
+    public void export() throws FileNotFoundException {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save store orders");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+        File file = fileChooser.showSaveDialog(new Stage());
+        if(file != null) {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+                for (Order order : orders) {
+                    writer.write(order.toString());
+                    writer.newLine();
+                }
+            } catch (IOException e) {
+                System.out.println("Error");
+            }
+        }
     }
 }

@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 /**
@@ -131,8 +132,9 @@ public class StoreOrdersController {
      * @param event unused event
      */
     @FXML
-    void handleExportStoreOrders(ActionEvent event) {
-
+    void handleExportStoreOrders(ActionEvent event) throws FileNotFoundException {
+        StoreOrders storeOrders = this.mainMenuController.getStoreOrdersObject();
+        storeOrders.export();
     }
 
 }

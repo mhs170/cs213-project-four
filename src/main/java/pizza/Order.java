@@ -81,4 +81,20 @@ public class Order {
     public double getTotal(){
         return getSalesTax() + getSubtotal();
     }
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Order Number: ").append(orderNumber).append("\n");
+
+        stringBuilder.append("Pizzas in Order:\n");
+        for (Pizza pizza : pizzas) {
+            stringBuilder.append("- ").append(pizza).append("\n");
+        }
+
+        stringBuilder.append("Subtotal: $").append(String.format("%.2f", getSubtotal())).append("\n");
+        stringBuilder.append("Sales Tax: $").append(String.format("%.2f", getSalesTax())).append("\n");
+        stringBuilder.append("Total: $").append(String.format("%.2f", getTotal())).append("\n");
+
+        return stringBuilder.toString();
+    }
 }
